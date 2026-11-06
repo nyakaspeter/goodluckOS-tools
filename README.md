@@ -15,7 +15,8 @@ carries everything it needs on its own.
 | `testing-sync.sh <id>` | Copy `testing/bin/` into `/home/player/ports/<id>/glos/testing/` on the console for a test run. |
 | `testing-clean.sh <id>` | Remove it again (and a bench's `start.bench.sh`). |
 | `shot.sh <id> [file.png] [factor]` | Screenshot of the console's framebuffer through that folder's `fbshot`. |
-| `testing/` | The console-side test tools: `src/` (C), `bin/` (armhf builds), `build.sh` (cross-compiles them in a ports' builder image). `fbshot`, `fbprobe`, `padpress`, `psample`, `stackscan`, `absinfo`, `memscan`, `pin`, `ioctlcount.so`, `divcount.so`. |
+| `testing/bin/drmshot [factor]` | Screenshot of the buffer the display shows (a DRM/KMS app such as the launcher, which `/dev/fb0` doesn't see); PPM on stdout, as root. |
+| `testing/` | The console-side test tools: `src/` (C), `bin/` (armhf builds), `build.sh` (cross-compiles them in a ports' builder image). `fbshot`, `drmshot`, `fbprobe`, `padpress`, `psample`, `stackscan`, `absinfo`, `memscan`, `pin`, `ioctlcount.so`, `divcount.so`. |
 | `flash-boot.sh /dev/diskN <image>` | Write a boot image to the card's boot region (sector 172032), with a backup and read-back check. |
 
 MTP traps: macOS's `ptpcamerad` grabs the console after the first transfer of
