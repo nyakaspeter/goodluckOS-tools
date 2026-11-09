@@ -2,7 +2,7 @@
 # Copy testing/bin/ (the console-side bench and profiling tools) into a game
 # folder on the console, /home/player/ports/<id>/glos/testing/, for a test run.
 # Game folders never ship it; testing-clean.sh removes it again.
-#   ../goodluckOS-tools/testing-sync.sh <id>      (id: gtasa, lcs, jk2, ...)
+#   ../goodluckOS-tools/testing-sync.sh <id>      (id: gtasa, gtalcs-psp, jk2, ...)
 set -eu
 id=${1:?usage: testing-sync.sh <id of /home/player/ports/<id>>}
 ROOT=$(cd "$(dirname "$0")" && pwd)
