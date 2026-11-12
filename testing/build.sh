@@ -21,6 +21,8 @@
 #                   cache, TLB and branch misses (perf_event_open; root)
 #   pmuread         with pmuon.ko loaded (src/pmuon, built by build-pmuon.sh
 #                   against the kernel tree): a core's cycle and event counters
+#   tlbcal          with pmuon.ko: cycles and TLB refills per access over N
+#                   pages of data and of code (what a TLB miss costs here)
 #   glslcheck       compile shader files with the active GLES 2 driver and
 #                   print its verdict (run through a port's glos-gpu)
 #   ioctlcount.so, divcount.so, memcmpcount.so   LD_PRELOAD counters (ioctls
@@ -41,5 +43,6 @@ for t in fbshot drmshot fbprobe padpress vpad psample pcstack stackscan memscan 
 $C $F -o bin/glslcheck src/glslcheck.c -ldl
 $C $F -o bin/perfstat src/perfstat.c
 $C $F -o bin/pmuread src/pmuread.c
+$C $F -o bin/tlbcal src/tlbcal.c
 $C $F -static -o bin/absinfo src/absinfo.c'
 ls -l bin
